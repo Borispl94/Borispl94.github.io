@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boris Paly — Power Platform, data et IA</title>
+  <meta name="description" content="Portfolio de Boris Paly, étudiant en Bachelor Informatique et Cybersécurité à l'ESILV : Power Platform, data, IA générative et automatisation. Recherche un stage de 5 mois à partir du 3 mai 2027 ou une alternance d'un an à partir d'octobre 2027.">
+  <meta name="author" content="Boris Paly">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Boris Paly — Power Platform, data et IA">
+  <meta property="og:description" content="Étudiant en informatique à l'ESILV. Stage de 5 mois dès le 3 mai 2027 ou alternance d'un an dès octobre 2027 : data, développement et IA.">
+  <meta property="og:image" content="https://borispl94.github.io/assets/img/photo.jpg">
+  <meta name="theme-color" content="#17212B">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Boris Paly",
+    "jobTitle": "Étudiant en informatique à l'ESILV — Power Platform, data et IA",
+    "alumniOf": "ESILV",
+    "email": "mailto:borispaly.pro@gmail.com",
+    "sameAs": ["https://www.linkedin.com/in/boris-paly", "https://github.com/Borispl94"]
+  }
+  </script>
+</head>
+<body data-page="accueil">
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#accueil" aria-label="Boris Paly, retour en haut">
+        <span class="nav__node" aria-hidden="true"></span>Boris Paly
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav aria-label="Navigation principale">
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#demarche">Démarche</a></li>
+          <li><a class="nav__cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" id="accueil" aria-labelledby="hero-nom">
+      <div class="hero__text">
+        <p class="hero__dispo" id="hero-dispo"></p>
+        <h1 class="hero__nom" id="hero-nom"></h1>
+        <p class="hero__titre" id="hero-titre"></p>
+        <p class="hero__accroche" id="hero-accroche"></p>
+        <p class="hero__sous" id="hero-sous"></p>
+        <div class="hero__actions">
+          <a class="btn btn--plein" href="#projets">Voir les projets</a>
+          <a class="btn" id="hero-cv" href="#cv">Voir mes CV</a>
+          <a class="btn btn--lien" href="#contact">Me contacter</a>
+        </div>
+      </div>
+      <figure class="hero__flux" aria-label="Domaines d'intérêt">
+        <div class="hero__photo"><img id="hero-photo" src="" alt="" width="377" height="472"></div>
+        <svg class="hero__fils" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="fil" d="M50 0 V35 M50 35 C50 55 12 50 12 70 V100 M50 35 C50 55 37 50 37 70 V100 M50 35 C50 55 63 50 63 70 V100 M50 35 C50 55 88 50 88 70 V100"/>
+        </svg>
+        <ul class="hero__domaines" id="hero-domaines"></ul>
+      </figure>
+    </section>
+
+    <section class="section" id="apropos" aria-labelledby="t-apropos">
+      <div class="section__tete">
+        <h2 id="t-apropos">À propos</h2>
+      </div>
+      <div class="apropos">
+        <div class="apropos__texte" id="apropos-texte"></div>
+        <aside class="apropos__cote">
+          <h3>Mon approche</h3>
+          <dl class="approche" id="apropos-approche"></dl>
+          <h3>Langues</h3>
+          <ul class="langues" id="apropos-langues"></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="competences" aria-labelledby="t-competences">
+      <div class="section__tete">
+        <h2 id="t-competences">Compétences</h2>
+        <p class="section__intro">Uniquement des compétences pratiquées, avec l'endroit où je les ai mises en œuvre quand c'est le cas.</p>
+      </div>
+      <div class="competences" id="competences-liste"></div>
+      <div class="competences__bas">
+        <div>
+          <h3>Compétences transversales</h3>
+          <ul class="pastilles" id="competences-transversales"></ul>
+        </div>
+        <div>
+          <h3>En cours d'apprentissage</h3>
+          <ul class="pastilles pastilles--pointille" id="competences-apprentissage"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="parcours" aria-labelledby="t-parcours">
+      <div class="section__tete">
+        <h2 id="t-parcours">Parcours</h2>
+        <div class="filtres" role="group" aria-label="Filtrer le parcours">
+          <button type="button" class="filtre" aria-pressed="true" data-filtre="tout">Tout</button>
+          <button type="button" class="filtre" aria-pressed="false" data-filtre="experience">Expériences</button>
+          <button type="button" class="filtre" aria-pressed="false" data-filtre="formation">Formations</button>
+        </div>
+      </div>
+      <ol class="parcours" id="parcours-liste"></ol>
+    </section>
+
+    <section class="section" id="projets" aria-labelledby="t-projets">
+      <div class="section__tete">
+        <h2 id="t-projets">Projets</h2>
+      </div>
+      <div id="projet-phare"></div>
+      <div class="projets" id="projets-liste"></div>
+    </section>
+
+    <section class="section" id="cv" aria-labelledby="t-cv">
+      <div class="section__tete">
+        <h2 id="t-cv">CV</h2>
+      </div>
+      <div class="cv">
+        <div class="cv__synthese" id="cv-synthese"></div>
+        <div class="cv__apercu">
+          <object id="cv-objet" type="application/pdf" data="" aria-label="Aperçu du CV au format PDF">
+            <p class="cv__repli">L'aperçu n'est pas disponible dans ce navigateur. <a id="cv-repli" href="">Ouvrir le CV (PDF)</a></p>
+          </object>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sombre" id="demarche" aria-labelledby="t-demarche">
+      <div class="section__tete">
+        <h2 id="t-demarche">Ma démarche</h2>
+      </div>
+      <div class="demarche">
+        <div class="demarche__texte" id="demarche-texte"></div>
+        <div class="demarche__apport">
+          <h3>Ce que j'apporte à une équipe</h3>
+          <ul id="demarche-apport"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="t-contact">
+      <div class="section__tete">
+        <h2 id="t-contact">Contact</h2>
+        <p class="section__intro" id="contact-intro"></p>
+      </div>
+      <div class="contact__grille" id="contact-liens"></div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p id="pied-texte"></p>
+  </footer>
+
+  <script src="data/profil.js"></script>
+  <script src="data/projets.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
