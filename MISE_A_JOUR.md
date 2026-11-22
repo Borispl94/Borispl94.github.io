@@ -10,6 +10,8 @@ node scripts/verifier.mjs     # signale une erreur de syntaxe ou un champ manqua
 
 puis publie (dépôt GitHub → déploiement automatique en 1 à 2 minutes).
 
+Si un visiteur voit encore l'ancienne version, c'est le cache de son navigateur : après une modification de `style.css`, `app.js` ou des fichiers `data/`, augmente le numéro `?v=2` (→ `?v=3`) dans `index.html` et `projet.html`.
+
 > Tu peux aussi simplement me transmettre la nouvelle information (nouveau CV, nouvelle expérience, nouvelle version d'IntelliView…) : j'analyse son impact sur le site et je prépare la mise à jour.
 
 ---
