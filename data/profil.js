@@ -157,7 +157,7 @@ window.PROFIL = {
         "Fiabilisation des flux et de l'intégrité de bases de données volumineuses (MySQL ODBC, MariaDB).",
         "Analyse des processus existants et préparation de la transition vers la facture électronique (transferts serveurs locaux / cloud).",
       ],
-      logo: "",
+      logo: "assets/img/logo-ciagec.png",
     },
     {
       type: "formation",
@@ -166,7 +166,7 @@ window.PROFIL = {
       lieu: "Lettonie",
       periode: "Janv. 2026 – juin 2026",
       points: [],
-      logo: "",
+      logo: "assets/img/logo-rtu.png",
     },
     {
       type: "experience",
@@ -179,7 +179,7 @@ window.PROFIL = {
         "Automatisation de la synchronisation des données : temps de mise à jour réduit de plus de 50 %.",
         "Déploiement et accompagnement des utilisateurs : trombinoscope numérique de 560 collaborateurs.",
       ],
-      logo: "",
+      logo: "assets/img/logo-ciagec.png",
     },
     {
       type: "formation",
