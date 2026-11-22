@@ -19,7 +19,7 @@ Si un visiteur voit encore l'ancienne version, c'est le cache de son navigateur 
 ## Cas fréquents
 
 ### Remplacer la photo
-Deux fichiers : `assets/img/photo.jpg` (photo normale, utilisée pour les aperçus de partage) et `assets/img/photo-detouree.png` (même photo **sans fond**, en PNG transparent, affichée sur l'accueil). Pour détourer une nouvelle photo : remove.bg ou l'outil « Supprimer l'arrière-plan » de Windows Photos / Canva. Une photo nette d'au moins 800 px de large rendra beaucoup mieux.
+Deux fichiers : `assets/img/photo.jpg` (photo normale, utilisée pour les aperçus de partage) et `assets/img/photo-detouree.webp` (même photo **sans fond**, en PNG ou WebP transparent, affichée sur l'accueil). Pour détourer une nouvelle photo : remove.bg ou l'outil « Supprimer l'arrière-plan » de Windows Photos / Canva. Une photo nette d'au moins 800 px de large rendra beaucoup mieux.
 
 ### Changer les grands mots de l'accueil
 `data/profil.js` → `identite.motsGeants` (2 lignes ; la 2e, la plus longue, passe devant la photo), `identite.sticker` (pastille violette) et `identite.chiffreCle` (chiffre mis en avant : uniquement un chiffre réel).

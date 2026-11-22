@@ -28,7 +28,7 @@ window.PROFIL = {
     localisation: "Saint-Maur-des-Fossés (94)",
     photo: "assets/img/photo.jpg",
     // Photo détourée (fond transparent) affichée sur l'accueil
-    photoDetouree: "assets/img/photo-detouree.png",
+    photoDetouree: "assets/img/photo-detouree.webp",
     // Les deux lignes en très grand sur l'accueil
     motsGeants: ["Data & IA", "Développeur"],
     // Pastille ronde en haut à droite de la photo
