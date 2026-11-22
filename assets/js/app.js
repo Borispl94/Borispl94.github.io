@@ -70,16 +70,19 @@
 
   /* ---------- accueil ---------- */
   function renderAccueil() {
+    set("hero-salut", "Bonjour, je suis " + esc(nomComplet));
+    set("hero-nom", '<span class="sr-only">' + esc(nomComplet) + " — </span>" +
+      list(I.motsGeants || [I.prenom, I.nom], function (m, i) { return '<span class="l' + (i + 1) + '">' + esc(m) + "</span>"; }));
+    set("hero-sticker", esc(I.sticker || ""));
     set("hero-dispo", '<span class="point" aria-hidden="true"></span>' + esc(I.recherche.badge));
-    set("hero-nom", '<span>' + esc(I.prenom) + '</span> <span>' + esc(I.nom) + "</span>");
-    set("hero-titre", esc(I.titre));
     set("hero-accroche", esc(I.accroche));
     set("hero-sous", esc(I.sousAccroche));
+    if (I.chiffreCle) set("hero-chiffre", "<strong>" + esc(I.chiffreCle.valeur) + "</strong><span>" + esc(I.chiffreCle.texte) + "</span>");
     var img = $("hero-photo");
-    img.src = I.photo; img.alt = I.photoAlt;
-    set("hero-domaines", list(I.domaines, function (d) {
-      return '<li><span class="noeud" aria-hidden="true"></span>' + esc(d) + "</li>";
-    }));
+    img.src = I.photoDetouree || I.photo; img.alt = I.photoAlt;
+    // Bandeau défilant : la liste est doublée pour une boucle continue
+    var items = list(I.domaines, function (d) { return "<li>" + esc(d) + '</li><li class="defile__etoile" aria-hidden="true">✦</li>'; });
+    set("hero-domaines", items + items.replace(/<li>/g, '<li aria-hidden="true">'));
 
     // À propos
     set("apropos-texte",

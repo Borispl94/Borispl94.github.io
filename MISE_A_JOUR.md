@@ -17,7 +17,10 @@ puis publie (dépôt GitHub → déploiement automatique en 1 à 2 minutes).
 ## Cas fréquents
 
 ### Remplacer la photo
-Dépose la nouvelle image sous `assets/img/photo.jpg` (format portrait 4:5, au moins 800 × 1000 px de préférence). Rien d'autre à changer.
+Deux fichiers : `assets/img/photo.jpg` (photo normale, utilisée pour les aperçus de partage) et `assets/img/photo-detouree.png` (même photo **sans fond**, en PNG transparent, affichée sur l'accueil). Pour détourer une nouvelle photo : remove.bg ou l'outil « Supprimer l'arrière-plan » de Windows Photos / Canva. Une photo nette d'au moins 800 px de large rendra beaucoup mieux.
+
+### Changer les grands mots de l'accueil
+`data/profil.js` → `identite.motsGeants` (2 lignes ; la 2e, la plus longue, passe devant la photo), `identite.sticker` (pastille violette) et `identite.chiffreCle` (chiffre mis en avant : uniquement un chiffre réel).
 
 ### Remplacer le CV
 Dépose le nouveau PDF dans `assets/docs/` sous le même nom que l'ancien (`CV_Stage_FR.pdf`, `CV_Stage_EN.pdf`, `CV_Alternance_FR.pdf` ou `CV_Alternance_EN.pdf`), puis change `cv.miseAJour` dans `data/profil.js`. Pour ajouter un CV, ajoute une ligne dans `cv.fichiers`. Vérifie que le reste du site reste cohérent avec le nouveau CV (titre, recherche, compétences, parcours).

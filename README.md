@@ -47,7 +47,7 @@ python3 -m http.server 8000      # puis http://localhost:8000
 - **Pas de formulaire de contact** : un formulaire nécessiterait un service tiers qui reçoit les messages (et des mesures anti-spam). Le lien e-mail et le bouton « Copier l'adresse » suffisent pour un recruteur. Si tu veux un formulaire plus tard : Formspree ou Netlify Forms.
 - **Téléphone masqué sur le site** (il reste dans le CV PDF). Pour l'afficher : `afficherTelephone: true` dans `data/profil.js`.
 - **Activité d'IntelliView en direct** : la fiche projet lit les 5 derniers commits via l'API publique de GitHub (lecture seule, sans jeton). En cas d'échec, un lien vers l'historique GitHub s'affiche.
-- **Polices** : Bricolage Grotesque et Instrument Sans via Google Fonts. Pour éviter tout appel à Google (RGPD), télécharge-les (google-webfonts-helper), place-les dans `assets/fonts/` et remplace la balise `<link>` par des `@font-face`.
+- **Polices** : Anton (grands titres) et Instrument Sans via Google Fonts. Pour éviter tout appel à Google (RGPD), télécharge-les (google-webfonts-helper), place-les dans `assets/fonts/` et remplace la balise `<link>` par des `@font-face`.
 - **Accessibilité** : lien d'évitement, navigation clavier visible, contrastes AA, textes alternatifs, animations désactivées si l'utilisateur le demande (`prefers-reduced-motion`).
 
 ## Mises à jour

@@ -27,6 +27,14 @@ window.PROFIL = {
     },
     localisation: "Saint-Maur-des-Fossés (94)",
     photo: "assets/img/photo.jpg",
+    // Photo détourée (fond transparent) affichée sur l'accueil
+    photoDetouree: "assets/img/photo-detouree.png",
+    // Les deux lignes en très grand sur l'accueil
+    motsGeants: ["Data & IA", "Développeur"],
+    // Pastille ronde en haut à droite de la photo
+    sticker: "Dispo mai 2027",
+    // Chiffre mis en avant en bas de l'accueil (réel, tiré du CV)
+    chiffreCle: { valeur: "15 000", texte: "fiches clients mises à jour par un outil interne que j'ai conçu" },
     photoAlt: "Portrait de Boris Paly",
     domaines: ["Power Platform & Microsoft 365", "Données & SQL", "IA générative", "Automatisation de processus"],
   },
