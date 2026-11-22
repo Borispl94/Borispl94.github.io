@@ -42,7 +42,7 @@ window.PROFIL = {
   contact: {
     email: "borispaly.pro@gmail.com",
     // Le téléphone figure sur le CV PDF. Passe à true pour l'afficher aussi sur le site.
-    afficherTelephone: false,
+    afficherTelephone: true,
     telephone: "+33 6 65 09 65 15",
     linkedin: "https://www.linkedin.com/in/boris-paly",
     github: "https://github.com/Borispl94",
@@ -187,7 +187,7 @@ window.PROFIL = {
       organisation: "ESILV — École d'ingénieurs",
       lieu: "Paris La Défense",
       periode: "2024 – 2027",
-      points: ["Cours : Power BI, analyse de données, probabilités, Excel, bases de données."],
+      points: ["Cours : Power BI, analyse de données, probabilités, Excel, bases de données, développement web."],
       logo: "assets/img/logo-esilv.png",
     },
     {
