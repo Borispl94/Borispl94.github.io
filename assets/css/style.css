@@ -1,8 +1,3 @@
-/* =====================================================================
-   Portfolio Boris Paly — style « affiche » : nuit aubergine, bandes
-   violettes, typographie géante condensée couleur crème.
-   Les couleurs et typos se règlent ici, dans :root.
-   ===================================================================== */
 :root {
   --fond: #1B0A2E;        /* fond principal */
   --fond-2: #26103F;      /* cartes, surfaces */
@@ -281,8 +276,8 @@ strong { color: var(--creme); }
 .section--sombre + .contact { padding-top: clamp(4rem, 9vw, 7rem); }
 .contact__grille { display: grid; gap: 2rem; }
 .contact__mail { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
-.contact__adresse { font: 400 clamp(1.8rem, 6vw, 4.6rem)/1 var(--f-titre); text-transform: uppercase; color: var(--creme); text-decoration: underline; text-decoration-color: var(--violet-vif); text-decoration-thickness: 5px; text-underline-offset: .12em; overflow-wrap: anywhere; }
-.contact__adresse:hover { color: var(--lilas); text-decoration-thickness: 5px; }
+.contact__adresse { font: 400 clamp(1.3rem, 4vw, 2.8rem)/1 var(--f-titre); text-transform: uppercase; color: var(--creme); text-decoration: underline; text-decoration-color: var(--violet-vif); text-decoration-thickness: 3px; text-underline-offset: .12em; overflow-wrap: anywhere; }
+.contact__adresse:hover { color: var(--lilas); text-decoration-thickness: 3px; }
 .contact__retour { color: #5DE0A6; font-weight: 500; }
 .contact__reseaux { display: flex; flex-wrap: wrap; gap: .5rem 2rem; font-size: 1.1rem; }
 .contact__reseaux span { color: var(--gris); }
