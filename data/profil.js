@@ -1,11 +1,3 @@
-/* =====================================================================
-   PROFIL — source unique des informations personnelles du portfolio
-   ---------------------------------------------------------------------
-   Pour mettre à jour le site : modifie uniquement ce fichier (et
-   data/projets.js pour les projets). Aucune autre modification n'est
-   nécessaire. Garde les guillemets et les virgules en fin de ligne.
-   Sources : CV (nov. 2026) et lettre de motivation (nov. 2026).
-   ===================================================================== */
 window.PROFIL = {
   identite: {
     prenom: "Boris",
@@ -15,49 +7,29 @@ window.PROFIL = {
     accroche: "Je remplace les tâches manuelles par des outils simples et fiables, que les équipes utilisent vraiment.",
     sousAccroche:
       "Étudiant en 3e année de Bachelor Informatique et Cybersécurité à l'ESILV, spécialité Data & Ingénierie Cloud. Deux stages chez CIAGEC à développer des applications Power Apps et à automatiser des flux de données.",
-    // Ce que je recherche : une ligne par type de contrat
     recherche: {
-      options: [
-        { contrat: "Stage de 5 mois", debut: "à partir du 3 mai 2027" },
-        { contrat: "Alternance d'un an", debut: "à partir d'octobre 2027" },
-      ],
-      domaines: "Data, développement d'applications et IA",
+      intitule: "Stage de 6 mois — transformation digitale (Power Platform, data, IA)",
+      debut: "à partir de mai 2027",
       // Pastille affichée en haut de l'accueil
-      badge: "Stage dès le 3 mai 2027 ou alternance dès octobre 2027",
+      badge: "Disponible pour un stage de 6 mois à partir de mai 2027",
     },
     localisation: "Saint-Maur-des-Fossés (94)",
     photo: "assets/img/photo.jpg",
-    // Photo détourée (fond transparent) affichée sur l'accueil
-    photoDetouree: "assets/img/photo-detouree.webp",
-    // Les deux lignes en très grand sur l'accueil
-    motsGeants: ["Data & IA", "Développeur"],
-    // Pastille ronde en haut à droite de la photo
-    sticker: "Dispo mai 2027",
-    // Chiffre mis en avant en bas de l'accueil (réel, tiré du CV)
-    chiffreCle: { valeur: "15 000", texte: "fiches clients mises à jour par un outil interne que j'ai conçu" },
     photoAlt: "Portrait de Boris Paly",
     domaines: ["Power Platform & Microsoft 365", "Données & SQL", "IA générative", "Automatisation de processus"],
   },
 
   contact: {
     email: "borispaly.pro@gmail.com",
-    // Le téléphone figure sur le CV PDF. Passe à true pour l'afficher aussi sur le site.
     afficherTelephone: true,
     telephone: "+33 6 65 09 65 15",
     linkedin: "https://www.linkedin.com/in/boris-paly",
     github: "https://github.com/Borispl94",
   },
 
-  /* CV téléchargeables. "apercu: true" = CV affiché dans l'aperçu de la page.
-     Pour remplacer un CV, dépose le nouveau PDF sous le même nom. */
   cv: {
+    fichier: "assets/docs/CV_Boris_Paly.pdf",
     miseAJour: "novembre 2026",
-    fichiers: [
-      { libelle: "Stage — français", fichier: "assets/docs/CV_Stage_FR.pdf", apercu: true },
-      { libelle: "Stage — English", fichier: "assets/docs/CV_Stage_EN.pdf" },
-      { libelle: "Alternance — français", fichier: "assets/docs/CV_Alternance_FR.pdf" },
-      { libelle: "Apprenticeship — English", fichier: "assets/docs/CV_Alternance_EN.pdf" },
-    ],
   },
 
   apropos: {
@@ -80,9 +52,6 @@ window.PROFIL = {
     ],
   },
 
-  /* Compétences : uniquement celles documentées dans le CV.
-     Aucun niveau chiffré n'est affiché. "contexte" précise où la
-     compétence a été pratiquée (laisser vide si non précisé). */
   competences: [
     {
       groupe: "Power Platform & Microsoft 365",
@@ -157,7 +126,7 @@ window.PROFIL = {
         "Fiabilisation des flux et de l'intégrité de bases de données volumineuses (MySQL ODBC, MariaDB).",
         "Analyse des processus existants et préparation de la transition vers la facture électronique (transferts serveurs locaux / cloud).",
       ],
-      logo: "assets/img/logo-ciagec.png",
+      logo: "",
     },
     {
       type: "formation",
@@ -166,7 +135,7 @@ window.PROFIL = {
       lieu: "Lettonie",
       periode: "Janv. 2026 – juin 2026",
       points: [],
-      logo: "assets/img/logo-rtu.png",
+      logo: "",
     },
     {
       type: "experience",
@@ -179,7 +148,7 @@ window.PROFIL = {
         "Automatisation de la synchronisation des données : temps de mise à jour réduit de plus de 50 %.",
         "Déploiement et accompagnement des utilisateurs : trombinoscope numérique de 560 collaborateurs.",
       ],
-      logo: "assets/img/logo-ciagec.png",
+      logo: "",
     },
     {
       type: "formation",
@@ -187,11 +156,11 @@ window.PROFIL = {
       organisation: "ESILV — École d'ingénieurs",
       lieu: "Paris La Défense",
       periode: "2024 – 2027",
-      points: ["Cours : Power BI, analyse de données, probabilités, Excel, bases de données, développement web."],
+      points: ["Cours : Power BI, analyse de données, probabilités, Excel, bases de données, développement web..."],
       logo: "assets/img/logo-esilv.png",
     },
+
     {
-      // À COMPLÉTER : diplôme obtenu, spécialité et années (absents du CV)
       type: "formation",
       titre: "Études secondaires",
       organisation: "Lycée d'Arsonval",
@@ -202,8 +171,6 @@ window.PROFIL = {
     },
   ],
 
-  /* Démarche professionnelle — synthèse rédigée à partir de la lettre
-     de motivation (version générale, sans destinataire). */
   demarche: {
     paragraphes: [
       "Cartographier des processus, identifier ce qui peut être automatisé, puis livrer des solutions Power Platform et d'IA générative utilisées par les équipes : c'est ce que j'ai fait en entreprise, et c'est ce que je veux approfondir.",
@@ -221,6 +188,6 @@ window.PROFIL = {
   site: {
     url: "https://borispl94.github.io/", // à ajuster après le déploiement
     description:
-      "Portfolio de Boris Paly, étudiant en Bachelor Informatique et Cybersécurité à l'ESILV : Power Platform, data, IA générative et automatisation. Recherche un stage de 5 mois à partir du 3 mai 2027 ou une alternance d'un an à partir d'octobre 2027.",
+      "Portfolio de Boris Paly, étudiant en Bachelor Informatique et Cybersécurité à l'ESILV : Power Platform, data, IA générative et automatisation. Recherche un stage de 6 mois à partir de mai 2027.",
   },
 };

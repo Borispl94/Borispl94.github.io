@@ -1,8 +1,3 @@
-/* =====================================================================
-   Rendu du portfolio à partir de data/profil.js et data/projets.js.
-   Pas de dépendance, pas d'étape de build. Inutile de modifier ce
-   fichier pour mettre à jour le contenu.
-   ===================================================================== */
 (function () {
   "use strict";
 
@@ -70,19 +65,19 @@
 
   /* ---------- accueil ---------- */
   function renderAccueil() {
-    set("hero-salut", "Bonjour, je suis " + esc(nomComplet));
-    set("hero-nom", '<span class="sr-only">' + esc(nomComplet) + " — </span>" +
-      list(I.motsGeants || [I.prenom, I.nom], function (m, i) { return '<span class="l' + (i + 1) + '">' + esc(m) + "</span>"; }));
-    set("hero-sticker", esc(I.sticker || ""));
-    set("hero-dispo", '<span class="point" aria-hidden="true"></span>' + esc(I.recherche.badge));
+    set("hero-dispo", esc(I.recherche.badge));
+    set("hero-nom", '<span>' + esc(I.prenom) + '</span> <span>' + esc(I.nom) + "</span>");
+    set("hero-titre", esc(I.titre));
     set("hero-accroche", esc(I.accroche));
     set("hero-sous", esc(I.sousAccroche));
-    if (I.chiffreCle) set("hero-chiffre", "<strong>" + esc(I.chiffreCle.valeur) + "</strong><span>" + esc(I.chiffreCle.texte) + "</span>");
     var img = $("hero-photo");
-    img.src = I.photoDetouree || I.photo; img.alt = I.photoAlt;
-    // Bandeau défilant : la liste est doublée pour une boucle continue
-    var items = list(I.domaines, function (d) { return "<li>" + esc(d) + '</li><li class="defile__etoile" aria-hidden="true">✦</li>'; });
-    set("hero-domaines", items + items.replace(/<li>/g, '<li aria-hidden="true">'));
+    img.src = I.photo; img.alt = I.photoAlt;
+    var cvBtn = $("hero-cv");
+    cvBtn.href = P.cv.fichier;
+    cvBtn.setAttribute("download", "CV_" + I.prenom + "_" + I.nom + ".pdf");
+    set("hero-domaines", list(I.domaines, function (d) {
+      return "<li>" + esc(d) + "</li>";
+    }));
 
     // À propos
     set("apropos-texte",
@@ -123,28 +118,19 @@
     set("projets-liste", list(PROJETS.filter(function (p) { return !p.phare; }), carteProjet));
 
     // CV
-    var cvs = P.cv.fichiers || [];
-    var cvApercu = cvs.filter(function (c) { return c.apercu; })[0] || cvs[0];
-    var nomFichier = function (c) { return c.fichier.split("/").pop().replace(/^CV_/, "CV_" + I.prenom + "_" + I.nom + "_"); };
     set("cv-synthese",
-      '<ul class="cv__recherche">' + list(I.recherche.options, function (o) {
-        return "<li><strong>" + esc(o.contrat) + "</strong> " + esc(o.debut) + "</li>";
-      }) + "</ul>" +
-      '<p class="cv__domaines">' + esc(I.recherche.domaines) + "</p>" +
+      '<p class="cv__lead">' + esc(I.recherche.intitule) + ", " + esc(I.recherche.debut) + ".</p>" +
       "<dl class=\"cv__faits\">" +
       "<div><dt>Formation</dt><dd>Bachelor Informatique et Cybersécurité, ESILV (2024 – 2027)</dd></div>" +
       "<div><dt>Expérience</dt><dd>2 stages chez CIAGEC : Power Apps / SharePoint, puis automatisation SQL</dd></div>" +
-      "<div><dt>International</dt><dd>Semestre d'échange à l'Université Technique de Riga, anglais professionnel</dd></div>" +
+      "<div><dt>International</dt><dd>Semestre d'échange à l'Université Technique de Riga · anglais professionnel</dd></div>" +
       "</dl>" +
-      '<h3 class="cv__titre">Télécharger un CV (PDF)</h3>' +
-      '<ul class="cv__liste">' + list(cvs, function (c) {
-        return '<li><a class="btn btn--petit" href="' + esc(c.fichier) + '" download="' + esc(nomFichier(c)) + '">' + esc(c.libelle) + "</a></li>";
-      }) + "</ul>" +
-      '<p class="cv__maj">Versions de ' + esc(P.cv.miseAJour) + ".</p>");
-    if (cvApercu) {
-      $("cv-objet").setAttribute("data", cvApercu.fichier + "#view=FitH");
-      $("cv-repli").href = cvApercu.fichier;
-    }
+      '<div class="cv__actions"><a class="btn btn--plein" href="' + esc(P.cv.fichier) + '" download="CV_' + esc(I.prenom + "_" + I.nom) + '.pdf">Télécharger le CV (PDF)</a>' +
+      ext(P.cv.fichier, "Ouvrir dans un onglet", "btn") + "</div>" +
+      '<p class="cv__maj">Version de ' + esc(P.cv.miseAJour) + ".</p>");
+    var obj = $("cv-objet");
+    obj.setAttribute("data", P.cv.fichier + "#view=FitH");
+    $("cv-repli").href = P.cv.fichier;
 
     // Démarche
     set("demarche-texte", list(P.demarche.paragraphes, function (p) { return "<p>" + esc(p) + "</p>"; }));
@@ -181,12 +167,11 @@
         ? '<img src="' + esc(e.logo) + '" alt="">'
         : '<span class="parcours__mono" aria-hidden="true">' + esc(e.organisation.charAt(0)) + "</span>";
       return '<li class="parcours__item parcours__item--' + esc(e.type) + '">' +
-        '<span class="parcours__noeud" aria-hidden="true"></span>' +
         '<div class="parcours__carte">' +
-        '<div class="parcours__logo">' + logo + "</div>" +
-        '<div class="parcours__corps">' +
         '<p class="parcours__meta">' + (e.periode ? '<span>' + esc(e.periode) + "</span>" : "") +
         '<span class="tag tag--' + esc(e.type) + '">' + (e.type === "experience" ? "Expérience" : e.type === "certification" ? "Certification" : "Formation") + "</span></p>" +
+        '<div class="parcours__logo">' + logo + "</div>" +
+        '<div class="parcours__corps">' +
         "<h3>" + esc(e.titre) + "</h3>" +
         '<p class="parcours__org">' + esc(e.organisation) + (e.lieu ? ", " + esc(e.lieu) : "") + "</p>" +
         (e.points.length ? "<ul>" + list(e.points, function (p) { return "<li>" + esc(p) + "</li>"; }) + "</ul>" : "") +
@@ -194,12 +179,24 @@
     }));
   }
 
+  /* Chiffres en mono, sans toucher au texte */
+  function chiffres(s) {
+    return esc(s).replace(/\d[\d\s  ]*\d(?:[\s  ]?%)?|\d(?:[\s  ]?%)?/g, function (m) {
+      return '<span class="num">' + m + "</span>";
+    });
+  }
+  /* Chiffre-clé = nombre qui ouvre la phrase de résultat, repris tel quel */
+  function chiffreCle(s) {
+    var m = /^(\d[\d\s  ]*\d|\d)\s+([^;,.]+)/.exec(s || "");
+    return m ? { valeur: m[1], unite: m[2] } : null;
+  }
+
   function carteProjetPhare(p) {
     var ops = (p.fonctionnalites || []).filter(function (f) { return f.statut === "operationnel"; });
     return '<article class="phare">' +
       '<div class="phare__visuel"><img src="' + esc(p.visuel) + '" alt="' + esc(p.visuelAlt || "") + '"></div>' +
       '<div class="phare__corps">' +
-      '<p class="phare__type">Projet phare · ' + esc(p.type) + ", " + esc(p.annee) + "</p>" +
+      '<p class="phare__type"><span class="phare__label">Projet phare</span><span>' + esc(p.type) + ", " + esc(p.annee) + "</span></p>" +
       "<h3>" + esc(p.nom) + "</h3>" +
       '<p class="phare__resume">' + esc(p.resume) + "</p>" +
       '<ul class="phare__fonctions">' + list(ops.slice(0, 4), function (f) { return "<li>" + esc(f.nom) + "</li>"; }) + "</ul>" +
@@ -211,16 +208,26 @@
       "</div></div></article>";
   }
 
-  function carteProjet(p) {
-    return '<article class="projet">' +
+  /* Grille bento : la forme varie selon la position, le contenu reste identique */
+  var FORMES = ["horizontal", "compact", "bande"];
+  function carteProjet(p, i) {
+    var forme = FORMES[i % FORMES.length];
+    var cle = forme === "horizontal" ? chiffreCle(p.resultat) : null;
+    if (forme === "horizontal" && !cle) forme = "compact";
+    var texte =
       '<p class="projet__type">' + esc(p.type) + ", " + esc(p.annee) + "</p>" +
       "<h3>" + esc(p.nom) + "</h3>" +
-      "<p>" + esc(p.resume) + "</p>" +
-      (p.resultat ? '<p class="projet__resultat"><strong>Résultat :</strong> ' + esc(p.resultat) + "</p>" : "") +
+      '<p class="projet__resume">' + esc(p.resume) + "</p>" +
+      (p.resultat ? '<p class="projet__resultat"><strong>Résultat :</strong> ' + chiffres(p.resultat) + "</p>" : "") +
       '<ul class="pastilles pastilles--petites">' + list(p.technologies, function (t) { return "<li>" + esc(t.nom) + "</li>"; }) + "</ul>" +
       (p.confidentiel ? '<p class="projet__note">Outil interne : code et captures non publics.</p>' :
-        '<a class="btn btn--petit" href="projet.html?id=' + encodeURIComponent(p.id) + '">Voir la fiche</a>') +
-      "</article>";
+        '<p class="projet__pied"><a class="btn btn--petit" href="projet.html?id=' + encodeURIComponent(p.id) + '">Voir la fiche</a></p>');
+    if (cle) {
+      return '<article class="projet projet--horizontal">' +
+        '<p class="projet__chiffre" aria-hidden="true"><span class="num">' + esc(cle.valeur) + "</span><span>" + esc(cle.unite) + "</span></p>" +
+        '<div class="projet__texte">' + texte + "</div></article>";
+    }
+    return '<article class="projet projet--' + forme + '">' + texte + "</article>";
   }
 
   /* ---------- fiche projet ---------- */
@@ -261,7 +268,7 @@
     if (p.fonctionnement && p.fonctionnement.length) {
       h += '<section class="section" aria-labelledby="f-fonct"><div class="section__tete"><h2 id="f-fonct">Comment ça marche</h2></div>' +
         '<ol class="etapes">' + list(p.fonctionnement, function (e) {
-          return '<li><span class="noeud" aria-hidden="true"></span><h3>' + esc(e.titre) + "</h3><p>" + esc(e.texte) + "</p></li>";
+          return '<li><h3>' + esc(e.titre) + "</h3><p>" + esc(e.texte) + "</p></li>";
         }) + "</ol></section>";
     }
 
@@ -373,7 +380,7 @@
   }
 
   /* ---------- démarrage ---------- */
-  set("pied-texte", "© " + new Date().getFullYear() + " " + esc(nomComplet) + " · " + ext(C.github, "GitHub", "") + " · " + ext(C.linkedin, "LinkedIn", ""));
+  set("pied-texte", "<span>© " + new Date().getFullYear() + " " + esc(nomComplet) + "</span>" + ext(C.github, "GitHub", "") + ext(C.linkedin, "LinkedIn", ""));
   initNav();
   if (document.body.dataset.page === "projet") renderFiche();
   else renderAccueil();

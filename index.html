@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Boris Paly</title>
-  <meta name="description" content="Portfolio de Boris Paly, étudiant en Bachelor Informatique et Cybersécurité à l'ESILV : Power Platform, data, IA générative et automatisation. Recherche un stage de 5 mois à partir du 3 mai 2027 ou une alternance d'un an à partir d'octobre 2027.">
+  <meta name="description" content="Portfolio de Boris Paly, étudiant en Bachelor Informatique et Cybersécurité à l'ESILV : Power Platform, data, IA générative et automatisation. Recherche un stage de 5 mois à partir de mai 2027.">
   <meta name="author" content="Boris Paly">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Boris Paly — Power Platform, data et IA">
-  <meta property="og:description" content="Étudiant en informatique à l'ESILV. Stage de 5 mois dès le 3 mai 2027 ou alternance d'un an dès octobre 2027 : data, développement et IA.">
+  <meta property="og:description" content="Étudiant en Bachelor Informatique et Cybersécurité à l'ESILV. Stage de 5 mois recherché à partir de mai 2027 en transformation digitale.">
   <meta property="og:image" content="https://borispl94.github.io/assets/img/photo.jpg">
-  <meta name="theme-color" content="#1B0A2E">
+  <meta name="theme-color" content="#C4CAD1">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=6">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Boris Paly",
-    "jobTitle": "Étudiant en informatique à l'ESILV — Power Platform, data et IA",
+    "jobTitle": "Étudiant en Bachelor Informatique et Cybersécurité à l'ESILV",
     "alumniOf": "ESILV",
     "email": "mailto:borispaly.pro@gmail.com",
     "sameAs": ["https://www.linkedin.com/in/boris-paly", "https://github.com/Borispl94"]
@@ -34,7 +34,7 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a class="nav__brand" href="#accueil" aria-label="Boris Paly, retour en haut">
-        <span class="nav__node" aria-hidden="true"></span>Boris Paly
+        Boris Paly
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <nav aria-label="Navigation principale">
@@ -53,33 +53,22 @@
 
   <main id="contenu">
     <section class="hero" id="accueil" aria-labelledby="hero-nom">
-      <div class="hero__scene">
-        <p class="hero__salut" id="hero-salut"></p>
-        <h1 class="hero__geant" id="hero-nom"></h1>
-        <div class="hero__bande" aria-hidden="true"></div>
-        <img class="hero__photo" id="hero-photo" src="" alt="" width="760" height="887">
-        <p class="hero__sticker" id="hero-sticker"></p>
-        <a class="hero__badge" href="#contact" aria-label="Me contacter">
-          <svg viewBox="0 0 120 120" aria-hidden="true">
-            <defs><path id="cercle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
-            <text><textPath href="#cercle" textLength="274" lengthAdjust="spacing">ME CONTACTER • ME CONTACTER •</textPath></text>
-          </svg>
-          <span class="hero__fleche" aria-hidden="true">↗</span>
-        </a>
-        <div class="hero__cote">
-          <p class="hero__dispo" id="hero-dispo"></p>
-          <p class="hero__accroche" id="hero-accroche"></p>
-          <p class="hero__sous" id="hero-sous"></p>
-          <div class="hero__actions">
-            <a class="btn btn--plein" href="#projets">Voir les projets</a>
-            <a class="btn" href="#cv">Voir mes CV</a>
-          </div>
+      <div class="hero__text">
+        <p class="hero__dispo" id="hero-dispo"></p>
+        <h1 class="hero__nom" id="hero-nom"></h1>
+        <p class="hero__titre" id="hero-titre"></p>
+        <p class="hero__accroche" id="hero-accroche"></p>
+        <p class="hero__sous" id="hero-sous"></p>
+        <div class="hero__actions">
+          <a class="btn btn--plein" href="#projets">Voir les projets</a>
+          <a class="btn" id="hero-cv" href="#cv" download>Télécharger le CV</a>
+          <a class="btn btn--lien" href="#contact">Me contacter</a>
         </div>
-        <p class="hero__chiffre" id="hero-chiffre"></p>
       </div>
-      <div class="defile" aria-label="Domaines d'intérêt">
-        <ul class="defile__piste" id="hero-domaines"></ul>
-      </div>
+      <figure class="hero__flux" aria-label="Domaines d'intérêt">
+        <div class="hero__photo"><img id="hero-photo" src="assets/img/photo.jpg" alt="Portrait de Boris Paly" width="377" height="472"></div>
+        <ul class="hero__domaines" id="hero-domaines"></ul>
+      </figure>
     </section>
 
     <section class="section" id="apropos" aria-labelledby="t-apropos">
@@ -175,8 +164,8 @@
     <p id="pied-texte"></p>
   </footer>
 
-  <script src="data/profil.js?v=5"></script>
-  <script src="data/projets.js?v=5"></script>
-  <script src="assets/js/app.js?v=5"></script>
+  <script src="data/profil.js"></script>
+  <script src="data/projets.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

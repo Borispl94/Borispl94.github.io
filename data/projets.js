@@ -1,17 +1,3 @@
-/* =====================================================================
-   PROJETS — vitrine du portfolio
-   ---------------------------------------------------------------------
-   Ajouter un projet : copie un bloc { ... } existant, change "id"
-   (sans espace ni accent), puis remplis les champs. Le projet apparaît
-   automatiquement sur l'accueil, et sa fiche dédiée est disponible à
-   l'adresse projet.html?id=<id>.
-
-   statut des fonctionnalités :
-     "operationnel"   -> disponible et vérifié dans la version en ligne
-     "en-preparation" -> développé, en attente de validation / publication
-     "envisage"       -> idée de la feuille de route, pas encore développée
-   Ne jamais marquer "operationnel" une fonctionnalité non publiée.
-   ===================================================================== */
 window.PROJETS = [
   {
     id: "intelliview",
